@@ -35,19 +35,19 @@ tmp1 = tmp2 = tmp3 = tmp4 = tmp5 = tmp6 = 0
 for i in range(N):
     x=int(input())
     if x%26 != 0:
-        if x%13 == 0:
+        if x%13 == 0 and x != tmp1 and x!= tmp2:
             if x>tmp1:
                 tmp2 = tmp1
                 tmp1 = x
             elif x>tmp2:
                 tmp2 = x
-        elif x%2 == 0:
+        elif x%2 == 0 and x != tmp3 and x!= tmp4:
             if x>tmp3:
                 tmp4 = tmp3
                 tmp3 = x
             elif x>tmp4:
                 tmp4 = x
-        else:
+        elif x != tmp6 and x!= tmp5:
             if x>tmp5:
                 tmp6 = tmp5
                 tmp5 =x
@@ -55,8 +55,11 @@ for i in range(N):
                 tmp6 = x
 R=int(input())
 R_new=(max((tmp1*tmp2),(tmp3*tmp4),(tmp5*tmp6),(tmp5*tmp3),(tmp5*tmp1)))
-print('Вычисленное контрольное значение: ', R_new)
-if R == R_new:
-    print('Контроль пройден')
-else:
+if R_new == 0:
     print('Контроль не пройден')
+else:
+    print('Вычисленное контрольное значение: ', R_new)
+    if R == R_new:
+        print('Контроль пройден')
+    else:
+     print('Контроль не пройден')
