@@ -30,3 +30,19 @@
 31
 
 """
+N = int(input())
+summa = 0
+d = 12345
+for i in range(N):
+    x,y = map(int, input().split())
+    summa += max(x,y)
+    if abs(x-y)<d and x!=y:
+        d=abs(x-y)
+if summa % 4 == 0:
+    if d == 12345:
+        print('0')
+    else:
+        print(summa - d)
+else:
+    print(summa)
+
