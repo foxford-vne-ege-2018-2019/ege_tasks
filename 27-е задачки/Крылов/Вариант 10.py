@@ -25,11 +25,12 @@
 2
 """
 N = int(input())
-y=-10**9
 m = t = 1
 for i in range(N):
     x = int(input())
-    if x < k:
+    if i == 0:
+        y = x-1
+    if x < y:
        t +=1
     else:
         t = 1
