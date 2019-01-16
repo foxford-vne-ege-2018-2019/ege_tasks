@@ -24,3 +24,15 @@
 Пример выходных данных для приведённого выше примера входных данных:
 2
 """
+N = int(input())
+y=-10**9
+m = t = 1
+for i in range(N):
+    x = int(input())
+    if x < k:
+       t +=1
+    else:
+        t = 1
+    y = x
+    m = max(m, t)
+print(m)
